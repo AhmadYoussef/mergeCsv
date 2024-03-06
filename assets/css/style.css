@@ -1,0 +1,18 @@
+.mergeForm{
+    width: 600px;
+    padding: 1rem;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.row .col{
+    padding: .25rem;
+}
+
+.mergeForm input {
+    margin-top: .5rem;
+    width: 100%;
+}

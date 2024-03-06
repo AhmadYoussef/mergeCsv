@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Merge CSV</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+<form id="mergeForm" class="mergeForm">
+
+    <fieldset>
+        <legend>
+            Merge Files..
+        </legend>
+        <div class="row">
+            <div class="col">
+                <label for="firstFile">
+                    Upload File:
+                </label>
+                <input id="firstFile" name="firstFile" type="file" accept="text/csv" required>
+            </div>
+            <div class="col">
+                <label for="relatedFirstColumn">
+                    Upload File:
+                </label>
+                <input id="relatedFirstColumn" name="relatedFirstColumn" type="text" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="secondFile">
+                    Upload File:
+                </label>
+                <input id="secondFile" name="secondFile"  type="file" accept="text/csv" required>
+            </div>
+            <div class="col">
+                <label for="relatedSecondColumn">
+                    Upload File:
+                </label>
+                <input id="relatedSecondColumn" name="relatedSecondColumn"  type="text"  required>
+            </div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </fieldset>
+</form>
+<script src="./javascript/index.js"></script>
+</body>
+</html>
