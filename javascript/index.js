@@ -95,7 +95,7 @@
       reader.readAsText(file);
     });
   }
-  function csvToJson(csvData, separator = ";") {
+  function csvToJson(csvData, separator = ",") {
     const lines = csvData.split('\n');
     const result = [];
     const headers = lines[0].split(separator);
