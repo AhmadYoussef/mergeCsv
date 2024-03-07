@@ -104,18 +104,5 @@
     });
   }
 
-  function filterAndSplitArray(array, filterFunction) {
-    const matchedArray = [];
-    const nonMatchedArray = [];
 
-    array.forEach(item => {
-      if (filterFunction(item)) {
-        matchedArray.push(item);
-      } else {
-        nonMatchedArray.push(item);
-      }
-    });
-
-    return [matchedArray, nonMatchedArray];
-  }
 })();
