@@ -87,31 +87,21 @@
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
       reader.onload = function(event) {
-        resolve(csvToJson(event.target.result));
+        Papa.parse(event.target.result, {
+          header: true,
+          complete: (results) => {
+            resolve(results.data);
+          },
+          error: (error) => {
+            console.error('Error parsing CSV:', error);
+          }
+        });
       };
       reader.onerror = function(event) {
         reject(event.target.error);
       };
       reader.readAsText(file);
     });
-  }
-  function csvToJson(csvData, separator = ",") {
-    const lines = csvData.split('\n');
-    const result = [];
-    const headers = lines[0].split(separator);
-
-    for (let i = 1; i < lines.length; i++) {
-      const obj = {};
-      const currentLine = lines[i].split(separator);
-
-      for (let j = 0; j < headers.length; j++) {
-        obj[headers[j].trim()] = currentLine[j]?.trim();
-      }
-
-      result.push(obj);
-    }
-
-    return result;
   }
 
   function filterAndSplitArray(array, filterFunction) {
